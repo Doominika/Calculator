@@ -24,7 +24,7 @@ extern "C" {
     }
 
     JNIEXPORT jdouble JNICALL
-    Java_com_example_calculator_Calculator_substract(JNIEnv *env, jobject, jdouble a, jdouble b) {
+    Java_com_example_calculator_Calculator_subtract(JNIEnv *env, jobject, jdouble a, jdouble b) {
         return a - b;
     }
 
@@ -40,5 +40,19 @@ extern "C" {
            return 0.0;
        }
         return a / b;
+    }
+
+    JNIEXPORT jdouble JNICALL
+    Java_com_example_calculator_Calculator_convertToPercentage(JNIEnv *env, jobject, jdouble a) {
+        return (a / 100.0);
+    }
+
+    JNIEXPORT jdouble JNICALL
+    Java_com_example_calculator_Calculator_calculatePercentage(JNIEnv *env, jobject, jdouble a, jdouble b) {
+//        if(a == 0.0 || b == 0.0)
+//        {
+//            return 0.0;
+//        }
+        return (a / 100.0) * b;
     }
 }
